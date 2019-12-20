@@ -10,33 +10,57 @@
 
 <style>
   #button {
+    display: block;
     cursor: pointer;
+    width: 363px;
+    height: 729px;
+    background-image: url("./class-select-bg.jpg");
   }
 
   #button:hover {
-    transform: scaleX(1);
   }
 
   #button .character {
-    transform: scale3d(0.8, 0.8, 1);
+    /* transform: scale3d(1, 1, 1); */
   }
+
+  .buttonContainer {
+    float: left;
+    position: absolute;
+    transform: scale3d(0.92, 0.92, 1);
+    transform-origin: center;
+  }
+
+  /* .buttonContainer:hover {
+  } */
+
+  .buttonContainer:active {
+    transform: scale3d(1, 1, 1);
+    transition: 0.25s ease-out transform;
+  }
+
+  .characterContainer {
+    float: left;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    z-index: 20;
+  }
+
+  /* #button .character:hover {
+    transform: scale3d(1, 1, 1);
+    transition: 0.25s ease-out transform;
+  } */
 </style>
 
 <body>
   <div id="button" style="position: relative">
-    <div style="float:left; z-index:100; position: absolute; top:0; left:0;">
+    <div class="buttonContainer" style="z-index:100">
       <img class="border" src="./class-select-frame.png" />
+      <div class="characterContainer">
+        <img class="character" src="./class-select-portrait-adventurer.png" />
+      </div>
     </div>
-
-    <div
-      style="float:left; z-index:100; position: absolute; top:10px; left:40px;"
-    >
-      <img class="character" src="./class-select-portrait-adventurer.png" />
-    </div>
-
-    <div
-      style="width: 363px; height: 729px; z-index:10; position: absolute; top:0px; left:0px; background-image:url('./class-select-bg.jpg'); float:left;"
-    ></div>
   </div>
 
   <script>
