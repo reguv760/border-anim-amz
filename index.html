@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <title>Test GIF</title>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+</head>
+
+<style>
+  #button {
+    cursor: pointer;
+  }
+
+  #button:hover {
+    transform: scaleX(1);
+  }
+
+  #button .character {
+    transform: scale3d(0.8, 0.8, 1);
+  }
+</style>
+
+<body>
+  <div id="button" style="position: relative">
+    <div style="float:left; z-index:100; position: absolute; top:0; left:0;">
+      <img class="border" src="./class-select-frame.png" />
+    </div>
+
+    <div
+      style="float:left; z-index:100; position: absolute; top:10px; left:40px;"
+    >
+      <img class="character" src="./class-select-portrait-adventurer.png" />
+    </div>
+
+    <div
+      style="width: 365px; height: 750px; z-index:10; position: absolute; top:0px; left:0px; background-image:url('./class-select-bg.jpg'); float:left;"
+    ></div>
+  </div>
+
+  <script>
+    $(function() {
+      $("#button").hover(
+        function() {
+          $(this)
+            .find(".border")
+            .attr("src", "border-anim.png");
+        },
+        function() {
+          $(this)
+            .find(".border")
+            .attr("src", "class-select-frame.png");
+        }
+      );
+    });
+  </script>
+</body>
